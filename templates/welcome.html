@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if submit == 'ok': %}    
+<h2><strong>Welcome, {{user}}! </strong></h2>
+
+{% else %}    
+<h2><strong>NO FORM WAS SUBMITTED</strong></h2>
+
+{% endif %}
+
+
+{% endblock %}
