@@ -1,25 +1,32 @@
 def validateUsername(username):
   if username == "":
-    return False
+    return 'User is empty'
   if " " in username or not username.isalpha() or len(username) > 20 or len(username) < 3:
-    return False  
-  return True
+    return 'User must contains between 3 and 20 alphanumeric characters'  
+  
+  return ''
 
 
 def validatePassword(password):
   if password == "":
-    return False
+    return "Password is empty"
   if " " in password or len(password) > 20 or len(password) < 3:
-    return False    
-  return True
+    return 'Password must be between 3 and 20 characters'    
+  return ''
 
 def validateRetype(element,retype):
-  return element == retype
+  if len(element) > 0:
+    if element != retype:
+      return "Passwords do not match"
+      
+  return ''
 
 
 def validateEmail(email):
-  if " " in email or len(email) > 20 or len(email) < 3:
-    return False
-  if email.count('@') != 1 or email.count('.') != 1:
-    return False
-  return True
+  if email:
+    if " " in email or len(email) > 20 or len(email) < 3:
+      return "Email must be between 3 and 20 characters and cannot contains empty '  ' spaces "
+    elif email.count('@') != 1 or email.count('.') != 1:
+      return "Email must contains one '@' and one '.' "
+
+  return ''

@@ -2,21 +2,9 @@
 
 {% block content %}
   <h1>Signup</h1>      
-    <!--
-    {% if tasks|length == 0 %}
-      <p>No tasks yet</p>
 
-    {% else %}
-        <ul>
-            {% for task in tasks %}
-            <li>{{task}}</li>
-            {% endfor %}
-        </ul>
 
-    {% endif %}
-      -->
-       
-  <form action="/form-submit" method="POST">
+  <form action="/signup" method="POST">
     <table>   
       <tbody>
         <tr>
@@ -24,7 +12,7 @@
             <label for="username" > Username:</label>
           </td>
           <td>
-            <input id="username" type="text" name="username" placeholder=" Choose a Username">
+            <input id="username" type="text" name="username" placeholder=" Choose a Username" value={{username}}>
             <span class="error">{{usernameError}}</span>
           </td>
         </tr>
@@ -54,7 +42,7 @@
             <label for="email" > Email (optional):</label>
           </td>
           <td>
-            <input id="email" type="text" name="email" placeholder=" E-mail or leave blank">         
+            <input id="email" type="text" name="email" placeholder=" E-mail or leave blank" value={{email}}>         
             <span class="error">{{emailError}}</span>
           </td>
         </tr>
