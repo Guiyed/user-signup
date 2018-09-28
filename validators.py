@@ -1,7 +1,7 @@
 def validateUsername(username):
   if username == "":
     return 'User is empty'
-  if " " in username or not username.isalpha() or len(username) > 20 or len(username) < 3:
+  elif " " in username or not username.isalpha() or len(username) > 20 or len(username) < 3:
     return 'User must contains between 3 and 20 alphanumeric characters'  
   
   return ''
@@ -10,7 +10,7 @@ def validateUsername(username):
 def validatePassword(password):
   if password == "":
     return "Password is empty"
-  if " " in password or len(password) > 20 or len(password) < 3:
+  elif " " in password or len(password) > 20 or len(password) < 3:
     return 'Password must be between 3 and 20 characters'    
   return ''
 

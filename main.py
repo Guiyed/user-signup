@@ -1,5 +1,7 @@
 from flask import Flask, request, redirect, render_template, url_for
-import validators
+import regenValidators
+#import validators
+
 
 
 app = Flask(__name__)
@@ -22,10 +24,10 @@ def signup():
     retype = request.form['retypepass']
     email = request.form['email']
 
-    usernameError = validators.validateUsername(username)
-    passwordError = validators.validatePassword(password)
-    retypeError = validators.validateRetype(password,retype)
-    emailError = validators.validateEmail(email)
+    usernameError = regenValidators.validateUsername(username)
+    passwordError = regenValidators.validatePassword(password)
+    retypeError = regenValidators.validateRetype(password,retype)
+    emailError = regenValidators.validateEmail(email)
 
 
     if not usernameError and not passwordError and not retypeError and not emailError:
